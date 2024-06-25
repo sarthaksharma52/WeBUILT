@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <style>
+    body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav li {
+    margin-right: 20px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .menu-toggle {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    height: 25px;
+    position: relative;
+  }
+  
+  .menu-toggle span {
+    background-color: white;
+    height: 5px;
+    width: 100%;
+    margin-bottom: 6px;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Styles for the mobile menu when open */
+  .menu-open {
+    background-color: transparent;
+  }
+  
+  .menu-open span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+  
+  .menu-open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .nav {
+      display: block;
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .menu-toggle {
+      display: flex;
+    }
+  
+    .menu-open {
+      background-color: #333;
+    }
+  }
+  
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Your website content goes here -->
+
+  <script>
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+    document.querySelector('.nav').classList.toggle('menu-open');
+  });
+  </script>
+</body>
+</html>
